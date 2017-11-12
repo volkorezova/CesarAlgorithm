@@ -56,8 +56,9 @@ int validateFuncArgs(int argc, char** argv ){
 
 //eccrypt function
 void encryptFunc(char* enteredString, int codeCesar){
+    int sizeOfString = strlen(enteredString);
     
-    for(int i = 0; i < strlen(enteredString); i++){
+    for(int i = 0; i < sizeOfString; i++){
         if (isalpha(enteredString[i])){
             if(isupper(enteredString[i])){
                 enteredString[i] = ((enteredString[i] - 'A' + codeCesar) % 26) + 'A';
@@ -72,8 +73,9 @@ void encryptFunc(char* enteredString, int codeCesar){
 
 //decrypt function
 void dencryptFunc(char* enteredString, int codeCesar){
+    int sizeOfString = strlen(enteredString);
     
-    for(int i = 0; i < strlen(enteredString); i++){
+    for(int i = 0; i < sizeOfString; i++){
         if (isalpha(enteredString[i])){
             if(isupper(enteredString[i])){
                 enteredString[i] = ((enteredString[i] - 'A' - codeCesar + 26) % 26) + 'A';
